@@ -1,17 +1,17 @@
 ﻿using MathOperations.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MathOperations.Controllers
+namespace YourNamespace.Controllers
 {
     public class MathController : Controller
     {
-        // Display form to the user
+        // Display the form
         public IActionResult Index()
         {
             return View();
         }
 
-        // Handle form submission and process the operation
+        // Handle form submission
         [HttpPost]
         public IActionResult Calculate(MathModel model)
         {

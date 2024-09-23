@@ -17,10 +17,5 @@ namespace MathOperations.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
     }
 }
