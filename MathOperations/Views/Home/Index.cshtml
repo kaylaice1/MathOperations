@@ -1,0 +1,43 @@
+﻿@model MathOperations.Models.MathModel
+
+@{
+    ViewData["Title"] = "Math Operations";
+}
+
+<h2>Math Operations</h2>
+
+<form asp-action="Calculate" method="post">
+    <div>
+        <label for="Number1">Number 1:</label>
+        <input asp-for="Number1" type="number" step="any" required />
+    </div>
+
+    <div>
+        <label for="Number2">Number 2:</label>
+        <input asp-for="Number2" type="number" step="any" required />
+    </div>
+
+    <div>
+        <label for="Operation">Operation:</label>
+        <select asp-for="Operation">
+            <option value="Add">Add</option>
+            <option value="Subtract">Subtract</option>
+            <option value="Multiply">Multiply</option>
+            <option value="Divide">Divide</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="submit" value="Calculate" />
+    </div>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="error">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+</form>

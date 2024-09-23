@@ -1,0 +1,13 @@
+﻿@model MathOperations.Models.MathModel
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h2>Result</h2>
+
+<p>
+    The result of @Model.Operation.ToLower() between @Model.Number1 and @Model.Number2 is: <strong>@Model.Result</strong>
+</p>
+
+<a href="/Home/Index">Go back</a>
